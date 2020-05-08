@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* settings for Nav-bar */
+
+.nav-bar {
+  position: fixed;
+  background: #333;
+  height: 60px;
+  width: 100%;
+  opacity: 0.8;
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 2px #ddd;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding: 5px 10px;
+  margin: 0px 20px;
+}
+
+nav ul li a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(238, 237, 237);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+.expand-icon {
+  color: rgb(238, 237, 237);
+}
+
+.expand-icon:hover {
+  color: #f2ab9b;
+  cursor: pointer;
+}
+
+.expand-icon-cell {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  nav ul {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    left: -140px;
+    top: 60px;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px #ddd;
+    justify-content: start;
+    transition: left 0.5s ease-in-out 0s;
+  }
+
+  .active {
+    left: 0px;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding-top: 15px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  nav ul li a {
+    margin: auto;
+    display: flex;
+    padding: 0 5px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .expand-icon-cell {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 18px;
+  }
+}
