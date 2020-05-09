@@ -5,14 +5,18 @@
   margin: 0;
 }
 
+/* body {
+  overflow: hidden;
+} */
+
 /* settings for Nav-bar */
 
 .nav-bar {
   position: fixed;
-  background: #333;
   height: 60px;
   width: 100%;
-  opacity: 0.8;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 nav ul {
@@ -20,7 +24,6 @@ nav ul {
   height: 100%;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 2px #ddd;
 }
 
 nav ul li {
@@ -34,6 +37,7 @@ nav ul li a {
   color: rgb(238, 237, 237);
   font-weight: 600;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 nav ul li a:hover {
@@ -53,7 +57,105 @@ nav ul li a:hover {
   display: none;
 }
 
+/* Home Page */
+
+.home-brief-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.home-brief-card#home {
+  background: url("./assets/photo-1547954575-855750c57bd3.jpeg") no-repeat
+    center;
+  color: white;
+}
+
+.home-brief-card#about {
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-brief-card#projects {
+  background: #457fca; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5691c8,
+    #457fca
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #5691c8,
+    #457fca
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-brief-card#contact {
+  background: #b79891; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #94716b,
+    #b79891
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #94716b,
+    #b79891
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-brief-card h1 {
+  font-size: 5rem;
+  color: white;
+}
+
+.home-brief-card p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.next-page-icon {
+  position: absolute;
+  bottom: 30px;
+  transition-property: bottom;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0;
+}
+
+.next-page-icon:hover {
+  bottom: 25px;
+}
+
+.next-page-icon i {
+  color: white;
+}
+
+/* cursor */
+.type-effect {
+  border-right: 3px solid #f24405;
+}
+
+/* Customize Screen Size */
+
 @media screen and (max-width: 800px) {
+  .nav-bar {
+    background-color: rgba(0, 0, 0, 0);
+  }
   nav ul {
     height: 100%;
     width: 200px;
@@ -61,7 +163,6 @@ nav ul li a:hover {
     left: -140px;
     top: 60px;
     flex-direction: column;
-    box-shadow: 2px 2px 2px #ddd;
     justify-content: start;
     transition: left 0.5s ease-in-out 0s;
   }

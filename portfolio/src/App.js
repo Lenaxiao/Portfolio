@@ -1,31 +1,28 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import AboutMe from "./components/AboutMe";
-import Project from "./components/Project";
 import Home from "./components/Home";
-import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 
 const App = () => {
   const links = [
     {
-      text: "HOME",
-      path: "/",
+      text: "home",
+      path: "/#home",
       icon: "large home icon"
     },
     {
-      text: "ABOUT",
-      path: "/about",
+      text: "about",
+      path: "/#about",
       icon: "large user outline icon"
     },
     {
-      text: "PEOJECTS",
-      path: "/projects",
+      text: "projects",
+      path: "/#projects",
       icon: "large code icon"
     },
     {
-      text: "CONTACT",
-      path: "/contact",
+      text: "contact",
+      path: "/#contact",
       icon: "large paper plane outline icon"
     }
   ];
@@ -34,11 +31,8 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <div>
-          <NavBar links={links} background="#333" />
+          <NavBar links={links} />
           <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={AboutMe} />
-          <Route path="/projects" exact component={Project} />
-          <Route path="/contact" exact component={Contact} />
         </div>
       </BrowserRouter>
     </div>

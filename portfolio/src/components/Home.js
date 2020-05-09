@@ -1,7 +1,18 @@
 import React from "react";
+import HomeBrief from "./HomeBrief";
+import AboutMeBrief from "./AboutMeBrief";
+import ProjectBrief from "./ProjectBrief";
+import ContactBrief from "./ContactBrief";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="home-container">
+      <HomeBrief words={["Hello", "Have Fun"]} />
+      <AboutMeBrief />
+      <ProjectBrief />
+      <ContactBrief />
+    </div>
+  );
 };
 
 export default Home;
