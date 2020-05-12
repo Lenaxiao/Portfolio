@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import avatar from "../assets/avatar.jpg";
 
 const WINDOW_SIZE_LIMIT1 = 1000;
@@ -16,13 +16,35 @@ const SideBarForm = ({ topics }) => {
           height="150"
         ></img>
         {topics.map(topic => (
-          <li key={topic} className={topic}>
-            <Link to="/somwhere">{topic}</Link>
+          <li key={topic}>
+            <Link
+              activeClass="side-bar-active"
+              to={topic}
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={0}
+              duration={500}
+            >
+              {topic}
+            </Link>
           </li>
         ))}
         <div className="link-out">
-          <i className="huge github icon"></i>
-          <i className="huge linkedin icon"></i>
+          <a
+            target="_blank"
+            href="https://github.com/Lenaxiao"
+            rel="noopener noreferrer"
+          >
+            <i className="huge github icon"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/sijia-xiao-359760150/"
+            rel="noopener noreferrer"
+          >
+            <i className="huge linkedin icon"></i>
+          </a>
         </div>
       </ul>
     </nav>
@@ -46,18 +68,36 @@ const HeaderBarForm = ({ topics }) => {
         <div>
           <ul>
             {topics.map(topic => (
-              <li
-                key={topic}
-                className={topic}
-                onClick={() => setIsExpand(!isExpand)}
-              >
-                <Link to="/somwhere">{topic}</Link>
+              <li key={topic} onClick={() => setIsExpand(!isExpand)}>
+                <Link
+                  activeClass="side-bar-active"
+                  to={topic}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={500}
+                >
+                  {topic}
+                </Link>
               </li>
             ))}
           </ul>
           <div className="link-out">
-            <i className="huge github icon"></i>
-            <i className="huge linkedin icon"></i>
+            <a
+              target="_blank"
+              href="https://github.com/Lenaxiao"
+              rel="noopener noreferrer"
+            >
+              <i className="huge github icon"></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/sijia-xiao-359760150/"
+              rel="noopener noreferrer"
+            >
+              <i className="huge linkedin icon"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -72,11 +112,7 @@ const SideBar = ({ topics }) => {
   );
 
   useLayoutEffect(() => {
-    if (width < WINDOW_SIZE_LIMIT1) {
-      setSideBar(false);
-    } else {
-      setSideBar(true);
-    }
+    setSideBar(width >= WINDOW_SIZE_LIMIT1);
     window.addEventListener("resize", () => setWidth(window.innerWidth));
     return () =>
       window.removeEventListener("resize", () => setWidth(window.innerWidth));

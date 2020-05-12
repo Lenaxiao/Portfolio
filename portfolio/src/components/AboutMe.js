@@ -11,7 +11,7 @@ const AboutMe = () => {
     <div className="about-me-container">
       <SideBar topics={content.topics} />
       <div className="about-me-page">
-        <section className="about-me-content summary">
+        <section className="about-me-content summary" id="summary">
           <div>
             <p className="name">
               <span className="firstname">{person.firstname} </span>
@@ -21,7 +21,7 @@ const AboutMe = () => {
             <p className="bio">{person.bio}</p>
           </div>
         </section>
-        <section className={`about-me-content education`}>
+        <section className={`about-me-content education`} id="education">
           <p className="topic">education</p>
           <div>
             {education.map((value, i) => {
@@ -49,7 +49,7 @@ const AboutMe = () => {
             })}
           </div>
         </section>
-        <section className="about-me-content skills">
+        <section className="about-me-content skills" id="skills">
           <p className="topic">Skills</p>
           <div className="skills-container">
             {Object.entries(skills).map(([key, value], indx) => {
@@ -59,7 +59,7 @@ const AboutMe = () => {
             })}
           </div>
         </section>
-        <section className="about-me-content experience">
+        <section className="about-me-content experience" id="experience">
           <p className="topic">Experience</p>
           <div>
             {experience.map((value, i) => {

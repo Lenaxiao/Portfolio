@@ -23,9 +23,13 @@ const NavBar = ({ links }) => {
   };
 
   return (
-    <nav className={`nav-bar ${navExpand ? "active" : ""}`}>
+    <nav className="nav-bar">
       <div className="expand-icon-cell">
-        <i className="large bars icon expand-icon" ref={ref}></i>
+        {!navExpand ? (
+          <i className="large bars icon expand-icon" ref={ref}></i>
+        ) : (
+          <i className="large close icon expand-icon dive-in" ref={ref}></i>
+        )}
       </div>
       <ul className={`nav-bar-list ${navExpand ? "active" : ""}`}>
         {links.map((link, i) => (

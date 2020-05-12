@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 
 export const ProgressBar = ({ field, data }) => {
   const [width, setWidth] = useState(0);
-  const COLORS = ["#025373", "#04ADBF", "#66CDD9", "#F2C063", "#F29472"];
 
   useEffect(() => {
     window.addEventListener("scroll", handleOnScroll, { passive: true });
-    return window.addEventListener("scroll", handleOnScroll);
+    return () => window.removeEventListener("scroll", handleOnScroll);
   });
 
   const handleOnScroll = e => {

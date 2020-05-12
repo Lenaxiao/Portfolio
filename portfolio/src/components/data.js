@@ -11,7 +11,7 @@ export const content = {
     database: { MySQL: 80 },
     other: { "machine learning": 70 }
   },
-  topics: ["Summary", "Education", "Skills", "Experience", "Interest"],
+  topics: ["summary", "education", "skills", "experience", "interest"],
   education: [
     {
       university: "University Of Washington",
