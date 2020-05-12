@@ -2,39 +2,61 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
+import AboutMe from "./components/AboutMe";
+
+const links = [
+  {
+    text: "home",
+    path: "/#home",
+    otherPath: "/home",
+    icon: "large home icon"
+  },
+  {
+    text: "about",
+    path: "/#about",
+    otherPath: "/about",
+    icon: "large user outline icon"
+  },
+  {
+    text: "projects",
+    path: "/#projects",
+    otherPath: "/projects",
+    icon: "large code icon"
+  },
+  {
+    text: "contact",
+    path: "/#contact",
+    otherPath: "/contact",
+    icon: "large paper plane outline icon"
+  }
+];
 
 const App = () => {
-  const links = [
-    {
-      text: "home",
-      path: "/#home",
-      icon: "large home icon"
-    },
-    {
-      text: "about",
-      path: "/#about",
-      icon: "large user outline icon"
-    },
-    {
-      text: "projects",
-      path: "/#projects",
-      icon: "large code icon"
-    },
-    {
-      text: "contact",
-      path: "/#contact",
-      icon: "large paper plane outline icon"
-    }
-  ];
-
   return (
     <div className="app">
       <BrowserRouter>
         <div>
-          <NavBar links={links} />
-          <Route path="/" exact component={Home} />
+          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/about" component={SideBarContainer} />
         </div>
       </BrowserRouter>
+    </div>
+  );
+};
+
+const HomeContainer = () => {
+  return (
+    <div>
+      <NavBar links={links} />
+      <Route path="/" exact component={Home} />
+    </div>
+  );
+};
+
+const SideBarContainer = () => {
+  return (
+    <div>
+      <Route path="/about" exact component={AboutMe} />
     </div>
   );
 };

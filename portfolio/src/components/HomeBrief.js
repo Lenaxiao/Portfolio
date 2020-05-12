@@ -11,24 +11,24 @@ const HomeBrief = ({ words }) => {
     let speed = 200;
     if (isDeleting) speed = 150;
     if (!isDeleting && txt === words[wordIndex]) speed = 1500;
-    const timer = setTimeout(() => typeWriter(), speed);
-    return () => setTimeout(timer);
-  }, [isDeleting, wordIndex, txt]);
 
-  const typeWriter = () => {
-    if (!isDeleting && txt === words[wordIndex]) {
-      setIsDeleting(true);
-    } else if (isDeleting && txt === "") {
-      setIsDeleting(false);
-      setWordIndex((wordIndex + 1) % words.length);
-    }
-    const currentWord = words[wordIndex];
-    if (isDeleting) {
-      setTxt(currentWord.substring(0, txt.length - 1));
-    } else {
-      setTxt(currentWord.substring(0, txt.length + 1));
-    }
-  };
+    const typeWriter = () => {
+      if (!isDeleting && txt === words[wordIndex]) {
+        setIsDeleting(true);
+      } else if (isDeleting && txt === "") {
+        setIsDeleting(false);
+        setWordIndex((wordIndex + 1) % words.length);
+      }
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        setTxt(currentWord.substring(0, txt.length - 1));
+      } else {
+        setTxt(currentWord.substring(0, txt.length + 1));
+      }
+    };
+    const timer = setTimeout(() => typeWriter(), speed);
+    return () => clearTimeout(timer); // prevent memory leak
+  }, [isDeleting, wordIndex, txt, words]);
 
   return (
     <section className="home-brief-card" id="home">
