@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
+import Project from "./components/Project";
 
 const links = [
   {
@@ -37,7 +38,8 @@ const App = () => {
       <BrowserRouter>
         <div>
           <Route exact path="/" component={HomeContainer} />
-          <Route exact path="/about" component={SideBarContainer} />
+          <Route exact path="/about" component={AboutMeContainer} />
+          <Route exact path="/projects" component={Project} />
         </div>
       </BrowserRouter>
     </div>
@@ -53,10 +55,11 @@ const HomeContainer = () => {
   );
 };
 
-const SideBarContainer = () => {
+const AboutMeContainer = () => {
   return (
     <div>
       <Route path="/about" exact component={AboutMe} />
+      <Route path="/" exact component={HomeContainer} />
     </div>
   );
 };

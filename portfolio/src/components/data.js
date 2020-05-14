@@ -86,5 +86,59 @@ export const content = {
         "Developed a web application using Plotly.js where user can obtain the toxicity estimation from pretrained MLP model and visulized training process."
       ]
     }
+  ],
+  projects: [
+    {
+      name: "Portfolio",
+      year: 2020,
+      category: "web",
+      description: [
+        "Created a React page to present the works of my own.",
+        "Achieved web animation and page effects using React Hook system.",
+        "Structured route flow to navigate through different components."
+      ],
+      link: "https://github.com/Lenaxiao/Portfolio"
+    },
+    {
+      name: "Streaming App",
+      year: 2020,
+      category: "web",
+      description: [
+        "Built a REST-based streaming app that allows user to manipulate data in their account.",
+        "Setup a RTMP server and succesfully streaming video from OBS.",
+        "Connected React to Redux using redux-thunk middle ware.",
+        "Handled authentication and authorizaiton using Google oAuth."
+      ],
+      link: "https://github.com/Lenaxiao/Streaming-Media"
+    },
+    {
+      name: "Percolation Visulization App",
+      year: 2019,
+      category: "web",
+      description: [
+        "Developed an Angular application for visualizing percolation process",
+        "Implemented weighted union-find algorithm with path compression to handle interactions and delth first search to optimize the drawing process."
+      ],
+      link: "https://github.com/Lenaxiao"
+    },
+    {
+      name: "Sliding Puzzle Game",
+      category: "algorithm",
+      year: "2019",
+      description: [
+        "Built a sliding puzzle game using Java",
+        "Implemented A* algorithm based on different priority functions."
+      ],
+      link: "https://github.com/Lenaxiao"
+    },
+    {
+      name: "Natural Language Processing",
+      year: "2019",
+      description: [
+        "Constructed an attetion-based recurrent neural network system using PyTorch and TensorFlow API to analyze text-based protein sequence.",
+        "Completed training process over multiple GPU nodes in AWS and Hyak platform."
+      ],
+      link: "https://github.com/Lenaxiao/thermalizer"
+    }
   ]
 };

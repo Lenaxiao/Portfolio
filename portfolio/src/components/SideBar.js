@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { Link as NaiveLink } from "react-router-dom";
 import avatar from "../assets/avatar.jpg";
 
 const WINDOW_SIZE_LIMIT1 = 1000;
@@ -7,6 +8,9 @@ const WINDOW_SIZE_LIMIT1 = 1000;
 const SideBarForm = ({ topics }) => {
   return (
     <nav className="side-bar-container">
+      <div className="back-to-home">
+        <NaiveLink to="/">Back To Home</NaiveLink>
+      </div>
       <ul className="side-bar">
         <img
           src={avatar}

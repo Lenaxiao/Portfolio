@@ -291,6 +291,18 @@
   background-color: #385d84;
 }
 
+.side-bar-container .back-to-home {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #e77557;
+}
+
+.side-bar-container .back-to-home a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 .side-bar-container .side-bar-active,
 .header-bar-container .side-bar-active {
   color: #e77557;
@@ -416,6 +428,119 @@
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-size: 1.5rem;
+}
+
+/* project page */
+
+.project .project-canvas {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.project .project-main {
+  width: 80%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project .project-main h1 {
+  font-family: "Bebas Neue", cursive;
+  color: #e77557;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.project .project-main p {
+  font-family: "Bebas Neue", cursive;
+  color: #e8cebc;
+  font-size: 2rem;
+}
+
+.project .content-page {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-list .card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+}
+.card-list .card .outlook {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-list .card:hover .outlook.outlook2 h3 {
+  display: none;
+}
+
+.card-list .card .outlook.outlook1 {
+  padding: 20px;
+}
+
+.card-list .card .outlook.outlook1 .content {
+  margin: 0 20px;
+}
+
+.card-list .card .outlook.outlook1 .content li {
+  list-style: none;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.card-list .card .outlook.outlook2 {
+  background: #a5bd9b;
+  background-size: 100%;
+  transition: 0.4s;
+}
+
+.card-list .card:hover .outlook.outlook2 {
+  height: 60px;
+}
+
+.card-list .card .outlook.outlook2 h2,
+.card-list .card .outlook.outlook2 h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 3em;
+  color: white;
+  transition: font-size 0.4s ease;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+}
+
+.card-list .card .outlook.outlook2 h2 {
+  font-size: 4em;
+  text-decoration: underline overline;
+}
+
+.card-list .card:hover .outlook.outlook2 h2 {
+  font-size: 2em;
+  text-decoration: none;
 }
 
 /* Customize Screen Size */

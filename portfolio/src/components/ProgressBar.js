@@ -11,6 +11,7 @@ export const ProgressBar = ({ field, data }) => {
   const handleOnScroll = e => {
     const dist = e.target.documentElement.scrollTop;
     if (dist >= 1200 && dist < 2000) {
+      // may optimize later
       setWidth(data);
     } else {
       setWidth(0);
