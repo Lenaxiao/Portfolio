@@ -17,6 +17,9 @@ const ProjectCard = ({ year, name, content, link, category }) => {
       >
         <h2>{year}</h2>
         <h3>{name}</h3>
+        <button type="button">
+          <a href={link}>To GitHub</a>
+        </button>
       </div>
     </div>
   );

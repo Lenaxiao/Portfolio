@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import DotEffect from "./DotEffect";
 import ProjectCard from "./ProjectCard";
 import { content } from "./data";
@@ -32,6 +33,11 @@ const Project = () => {
           })}
         </div>
       </div>
+      <Link to="/">
+        <button type="button" className="home-button">
+          Home
+        </button>
+      </Link>
     </div>
   );
 };

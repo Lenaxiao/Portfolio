@@ -40,6 +40,9 @@ const App = () => {
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/about" component={AboutMeContainer} />
           <Route exact path="/projects" component={Project} />
+          <div className="footage">
+            <p>Copywrite 2020 by Lena Xiao</p>
+          </div>
         </div>
       </BrowserRouter>
     </div>
