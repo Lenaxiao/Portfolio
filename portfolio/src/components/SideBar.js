@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { Link as NaiveLink } from "react-router-dom";
+import { Link as ReactLink } from "react-router-dom";
 import avatar from "../assets/avatar.jpg";
 
 const WINDOW_SIZE_LIMIT1 = 1000;
@@ -9,7 +9,7 @@ const SideBarForm = ({ topics }) => {
   return (
     <nav className="side-bar-container">
       <div className="back-to-home">
-        <NaiveLink to="/">Back To Home</NaiveLink>
+        <ReactLink to="/">Back To Home</ReactLink>
       </div>
       <ul className="side-bar">
         <img
@@ -26,7 +26,6 @@ const SideBarForm = ({ topics }) => {
               to={topic}
               spy={true}
               smooth={true}
-              hashSpy={true}
               offset={0}
               duration={500}
             >
@@ -68,6 +67,11 @@ const HeaderBarForm = ({ topics }) => {
       <div className="header-bar-icon" onClick={() => setIsExpand(!isExpand)}>
         {icon}
       </div>
+      <div className="header-bar-icon home">
+        <ReactLink to="/">
+          <i className="big home icon" />
+        </ReactLink>
+      </div>
       <div className={`header-bar-menu ${isExpand ? "" : "hidden"}`}>
         <div>
           <ul>
@@ -78,7 +82,6 @@ const HeaderBarForm = ({ topics }) => {
                   to={topic}
                   spy={true}
                   smooth={true}
-                  hashSpy={true}
                   offset={0}
                   duration={500}
                 >
@@ -111,18 +114,14 @@ const HeaderBarForm = ({ topics }) => {
 
 const SideBar = ({ topics }) => {
   const [width, setWidth] = useState(window.innerWidth);
-  const [sideBar, setSideBar] = useState(
-    window.innerWith >= WINDOW_SIZE_LIMIT1
-  );
 
   useLayoutEffect(() => {
-    setSideBar(width >= WINDOW_SIZE_LIMIT1);
     window.addEventListener("resize", () => setWidth(window.innerWidth));
     return () =>
       window.removeEventListener("resize", () => setWidth(window.innerWidth));
-  }, [width, setWidth]);
+  });
 
-  if (sideBar) {
+  if (width >= WINDOW_SIZE_LIMIT1) {
     return <SideBarForm topics={topics} />;
   } else {
     return <HeaderBarForm topics={topics} />;

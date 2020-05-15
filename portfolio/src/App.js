@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
@@ -35,7 +35,7 @@ const links = [
 const App = () => {
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/about" component={AboutMeContainer} />
@@ -44,7 +44,7 @@ const App = () => {
             <p>Copywrite 2020 by Lena Xiao</p>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };

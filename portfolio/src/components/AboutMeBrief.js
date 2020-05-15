@@ -1,19 +1,19 @@
 import React from "react";
-import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import { Link as ReactLink } from "react-router-dom";
 
-const AboutMeBrief = ({topic, content}) => {
+const AboutMeBrief = ({ topic, content }) => {
   return (
     <section className="home-brief-card" id="about">
       <h1>{topic}</h1>
       <p>{content}</p>
-      <Link to="/about">
+      <ReactLink to="/about">
         <button className="ui inverted large button">More</button>
-      </Link>
+      </ReactLink>
       <div className="next-page-icon">
-        <HashLink smooth to="/#projects">
+        <Link to="projects" smooth={true} offset={0} duration={500}>
           <i className="huge arrow alternate circle down outline icon"></i>
-        </HashLink>
+        </Link>
       </div>
     </section>
   );

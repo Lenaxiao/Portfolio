@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState, useRef } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-scroll";
 
 const NavBar = ({ links }) => {
   const [navExpand, setNavExpand] = useState(false); // use hook
@@ -34,8 +34,8 @@ const NavBar = ({ links }) => {
       <ul className={`nav-bar-list ${navExpand ? "active" : ""}`}>
         {links.map((link, i) => (
           <li className="item" key={i}>
-            <Link smooth to={link.path}>
-              <i className={link.icon}></i>
+            <Link to={link.text} smooth={true} offset={0} duration={500}>
+              <i className={link.icon} />
               {link.text}
             </Link>
           </li>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-scroll";
 
 const HomeBrief = ({ words }) => {
   const [isDeleting, setIsDeleting] = useState(false);
@@ -37,7 +38,7 @@ const HomeBrief = ({ words }) => {
         <span className="type-effect">{txt}</span>
       </p>
       <div className="next-page-icon">
-        <Link smooth to="/#about">
+        <Link to="about" smooth={true} offset={0} duration={500}>
           <i className="huge arrow alternate circle down outline icon"></i>
         </Link>
       </div>

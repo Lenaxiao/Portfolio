@@ -42,6 +42,7 @@
 
 .nav-bar-list li a:hover {
   color: white;
+  cursor: pointer;
 }
 
 .expand-icon {
@@ -379,9 +380,26 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.header-bar-icon > i {
+.header-bar-icon.home {
+  top: 50px;
+}
+
+.header-bar-icon.home i {
+  color: #004f6e;
+}
+
+.header-bar-icon i {
   margin: 0 auto;
   transition: transform 0.5s ease;
+}
+
+.header-bar-icon i {
+  transition: 0.2s;
+}
+
+.header-bar-icon i:hover {
+  cursor: pointer;
+  color: #f56e47;
 }
 
 .dive-in {
@@ -656,6 +674,22 @@
 }
 
 @media screen and (max-width: 500px) {
+  .home-brief-card .next-page-icon {
+    display: none;
+  }
+
+  .home-brief-card {
+    padding: 0 20px;
+  }
+
+  .home-brief-card h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-brief-card p {
+    font-size: 1.5rem;
+  }
+
   .about-me-page {
     grid-template-columns: 70px auto;
     gap: 0;
