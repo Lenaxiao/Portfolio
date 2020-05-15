@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import DotEffect from "./DotEffect";
 import ProjectCard from "./ProjectCard";
 import { content } from "./data";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const { projects } = content;
@@ -33,11 +33,12 @@ const Project = () => {
           })}
         </div>
       </div>
-      <Link to="/">
-        <button type="button" className="home-button">
-          Home
-        </button>
-      </Link>
+      <div className="footage">
+        <Link to="/">
+          <i className="big home icon"></i>
+        </Link>
+        <p>Copywrite 2020 by Lena Xiao</p>
+      </div>
     </div>
   );
 };

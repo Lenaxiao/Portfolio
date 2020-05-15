@@ -497,7 +497,7 @@
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px 0;
+  gap: 20px;
 }
 
 .card-list .card {
@@ -591,41 +591,22 @@
   display: none;
 }
 
-.project .home-button {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0);
-  color: white;
-  font-size: 1.5em;
-  font-weight: 600;
-  padding: 5px 10px;
-  margin: 10px;
-  cursor: pointer;
-  border: none;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  transition: 0.3s;
-}
-
-.project .home-button:hover {
-  color: #e77557;
-  border-top-color: #e77557;
-  border-bottom-color: #e77557;
-}
-
-.app .footage {
+/* foot */
+.footage {
   height: 80px;
   color: white;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.app .footage p {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
-  padding-bottom: 10px;
+.footage p {
+  margin-top: 10px;
+}
+
+.footage i {
+  color: white;
 }
 
 /* Customize Screen Size */
@@ -757,9 +738,5 @@
 
   .project .project-main p {
     font-size: 1.5rem;
-  }
-
-  .card-list {
-    gap: 20px;
   }
 }

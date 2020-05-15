@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const BALL_N = 10;
 const BACKGROUND_COLOR = "#173040";
 const BALL_COLOR = "#CCDCDF";
 const LINE_COLOR = "#CCDCDF";
@@ -48,7 +47,15 @@ const DotEffect = () => {
     };
 
     let ballList = [];
-    for (let i = 0; i < BALL_N; i++) {
+    let ballN;
+    if (canvasWidth <= 500) {
+      ballN = 10;
+    } else if (canvasWidth <= 1000) {
+      ballN = 40;
+    } else {
+      ballN = 70;
+    }
+    for (let i = 0; i < ballN; i++) {
       ballList.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,

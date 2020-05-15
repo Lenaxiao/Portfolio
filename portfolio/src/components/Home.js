@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HomeBrief from "./HomeBrief";
 import AboutMeBrief from "./AboutMeBrief";
 import ProjectBrief from "./ProjectBrief";
@@ -16,6 +17,12 @@ const Home = () => {
       />
       <ProjectBrief />
       <ContactBrief />
+      <div className="footage">
+        <Link to="/">
+          <i className="big home icon"></i>
+        </Link>
+        <p>Copywrite 2020 by Lena Xiao</p>
+      </div>
     </div>
   );
 };
