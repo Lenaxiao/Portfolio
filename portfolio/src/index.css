@@ -459,6 +459,11 @@
   z-index: -1;
 }
 
+.project .intro-page {
+  width: 100%;
+  margin: 0;
+}
+
 .project .project-main {
   width: 80%;
   height: 100vh;
@@ -492,7 +497,7 @@
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 20px 0;
 }
 
 .card-list .card {
@@ -550,6 +555,8 @@
   background: #a5bd9b;
   background-size: 100%;
   transition: 0.4s;
+  margin: 0;
+  padding: 0;
 }
 
 .card-list .card:hover .outlook.outlook2 {
@@ -742,5 +749,17 @@
   .about-card-container > .content > .detail-list li {
     font-size: 1rem;
     padding: 0.05rem;
+  }
+
+  .project .project-main h1 {
+    font-size: 4rem;
+  }
+
+  .project .project-main p {
+    font-size: 1.5rem;
+  }
+
+  .card-list {
+    gap: 20px;
   }
 }
